@@ -42,7 +42,7 @@ public:
 
     //vectorize the matrix transforms the matrix into a col vector
     // this supports chaining use *this
-    [[nodiscard]] Matrix vectorize() const;
+    void vectorize() ;
 
     // prints matrix elems, no return value
     // this prints space after each element including the last elem in the row

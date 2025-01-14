@@ -55,9 +55,9 @@ Matrix Matrix::transpose() const
 
 //vectorize the matrix transforms the matrix into a col vector
 // this supports chaining use *this
-Matrix Matrix::vectorize() const
+[[nodiscard]] Matrix Matrix::vectorize() const
 {
-    Matrix result(1, rows * cols);
+    Matrix result(1, rows * cols); // Create a new vectorized matrix
     for (int i{0}; i < rows; ++i)
     {
         for (int j{0}; j < cols; ++j)
@@ -65,7 +65,7 @@ Matrix Matrix::vectorize() const
             result(0, i * cols + j) = (*this)(i, j);
         }
     }
-    return result;
+    return result; // Return the new vectorized matrix
 }
 // for all i,j (A.dot(B)_{ij} = A_{ij} * B_{ij})
 Matrix Matrix::dot(const Matrix& m) const
