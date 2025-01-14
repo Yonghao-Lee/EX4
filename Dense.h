@@ -12,14 +12,14 @@ class Dense
 private:
     const Matrix& weights;
     const Matrix& biases;
-    Activation::ActivationFunction act;
+    activation::ActivationFunction act;
 public:
-  Dense(const Matrix& weights, const Matrix& biases, Activation::ActivationFunction act)
+  Dense(const Matrix& weights, const Matrix& biases, activation::ActivationFunction act)
       : weights{weights}, biases{biases}, act{act}{};
   // getters
     const Matrix& get_weights() const { return weights; }
-    const Matrix& get_biases() const { return biases; }
-    Activation::ActivationFunction get_activation() const { return act; }
+    const Matrix& get_bias() const { return biases; }
+    activation::ActivationFunction get_activation() const { return act; }
 
     // operator overloading
     Matrix operator()(const Matrix& input) const;

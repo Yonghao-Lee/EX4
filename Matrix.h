@@ -47,8 +47,11 @@ public:
     // prints matrix elems, no return value
     // this prints space after each element including the last elem in the row
     // it prints the newline after each row
-    void print() const;
+    void plain_print() const;
 
+    // return a new mat that is the elem-wise multiplication(Hadamard product)
+    // of this matrix with another matrix m:
+    Matrix dot(const Matrix& m) const;
     // returns the norm of the given matrix
     [[nodiscard]] float norm() const;
 

@@ -67,11 +67,25 @@ Matrix Matrix::vectorize() const
     }
     return result;
 }
+// for all i,j (A.dot(B)_{ij} = A_{ij} * B_{ij})
+Matrix Matrix::dot(const Matrix& m) const
+{
+    if (rows != m.rows || cols != m.cols)
+    {
+        throw std::invalid_argument("Matrix dimensions do not match in dot");
+    }
 
+    Matrix result(rows, cols);
+    for (int i{0}; i < rows * cols; ++i)
+    {
+        result.data[i] = data[i] * m.data[i];
+    }
+    return result;
+}
 // prints matrix elems, no return value
 // this prints space after each element including the last elem in the row
 // it prints the newline after each row
-void Matrix::print() const
+void Matrix::plain_print() const
 {
     for (int i{0}; i < rows; ++i)
     {

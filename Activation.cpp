@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-namespace Activation {
+namespace activation {
     Matrix relu(const Matrix& input){
     Matrix result(input.get_rows(), input.get_cols());
     for(int i{0}; i < input.get_rows(); ++i){

@@ -6,7 +6,7 @@
 #include <cmath>
 #include <iostream>
 // Insert Activation namespace here...
-namespace Activation{
+namespace activation{
 
     typedef Matrix (*ActivationFunction)(const Matrix&);
 
