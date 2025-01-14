@@ -371,11 +371,11 @@ std::ostream& operator<<(std::ostream& os, const Matrix& m)
         {
             if (m(i, j) > 0.1)
             {
-                os << m(i, j) << " ";
+                os <<  "**";
             }
             else
             {
-                os << "0 ";
+                os << "  ";
             }
         }
         os << "\n";
